@@ -1,0 +1,132 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Grading.css">
+</head>
+
+
+<img class="image"style="padding: 15px;" alt="student" src="Student.jpg" width="300px"  height="200px">
+
+    <div class="sec">
+        <h1>
+            SCHOOL GRADING SYSTEM
+        </h1>
+
+    </div>
+
+
+<div class="student-info">
+    <h4>
+        Student information <br> <br>
+    </h4>
+
+
+   <label class="Student-name" >StudentName</label > <input type="text"> <br>  <br>
+   <label class="Student-class" >Studentclass</label>  <input class="aa" type="text"> <br> <br>
+   <label  class="Session">Session</label> <input class="ab" type="text"> <br> <br>
+   <label class="admin" >FormNumber</label> <input type="number"> <br>  <br>
+
+   <label class="term" >Term</label> 
+   <select class="select" name="" id="">
+    <option value="TERM...">TERM...</option>
+    <option value="FIRST">FIRST</option>
+    <option value="FIRST">SECOND</option>
+    <option value="FIRST">THIRD</option>  
+
+   </select>
+</div> <br> <br> <br>
+
+
+
+
+<nav class="navbar">
+
+    <div class="subject">
+     
+     <label > English</label> <input type="text" id="english"> <br> <br>
+     <label > mathematics</label> <input type="text" id="mathematics"> <br> <br>
+     <label > Chemistry</label> <input type="text" id="chemistry">   <br> <br>
+     <label > physics</label> <input type="text" id="physics">  <br> <br>
+     <label > biology</label> <input type="text" id="biology">  <br> <br>
+
+
+     <button id="calc" onclick="displayResult()"  class="bt1">calc</button> 
+     <button id="show" onclick="showAverage()"  class="bt2">Average</button> 
+     <button id="revv" onclick="showReview()"  class="bt3">Review</button>
+    </div>
+
+
+     <div class="right">
+         <label >total</label> <input id="tot" type="text" class="total">  <br><br>
+         <label >average</label> <input id="ave" type="text" class="Average"> <br> <br>
+         <label >grades</label> <input id="rev" type="text" class="grades"> <br> <br>
+
+     </div>
+
+
+
+</nav>
+
+<body>
+    
+
+<script>
+    
+ function displayResult(){
+    var a= document.getElementById("english").value;
+    var b= document.getElementById("mathematics").value;
+    var c= document.getElementById("chemistry").value;
+    var d= document.getElementById("physics").value;
+    var e= document.getElementById("biology").value;
+
+     var f =document.getElementById("tot").value = 'your total score is' + ( eval(a) + eval(b) + eval(c) + eval(d) + eval(e))
+
+     }
+
+
+  function showAverage(){
+    var a= document.getElementById("english").value;
+    var b= document.getElementById("mathematics").value;
+    var c= document.getElementById("chemistry").value;
+    var d= document.getElementById("physics").value;
+    var e= document.getElementById("biology").value;
+
+    var f = document.getElementById("ave").value = 'your score is' + Math.round ((eval(a) + eval(b) + eval(c) + eval(d) +eval(e))/5)
+
+  }
+
+  function showReview(){
+    var a= document.getElementById("english").value;
+    var b= document.getElementById("mathematics").value;
+    var c= document.getElementById("chemistry").value;
+    var d= document.getElementById("physics").value;
+    var e= document.getElementById("biology").value;
+
+    var f = document.getElementById("rev").value = Math.round ((eval(a) + eval(b) + eval(c) + eval(d) +eval(e))/5)
+
+    if (f >= 70) {
+        document.getElementById('rev').value = 'you passed'
+    }
+    else if (f > 60 && f< 70) {
+        document.getElementById('rev').value = 'you performed well'
+    }
+    else if (f>50 && f<60) {
+        document.getElementById('rev').value = 'you can do better'
+    }
+    else if (f>40 && f<50) {
+        document.getElementById('rev').value = 'try again next session'
+    }
+    else{
+        document.getElementById('rev').value = 'you failed'
+    }
+
+  }
+
+  
+
+</script>
+
+</body>
+</html>
